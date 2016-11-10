@@ -71,22 +71,10 @@ table {
      }
 .clearfix { display: inline-block; }
 
-footer {
-	position: relative;
+* {
+	font-family: sans-serif;
 }
-footer p {
-	/*display: inline-block;*/
-	text-align: right;
-	margin-right: 55px;
-}
-footer img {
-	/*display: inline-block;*/
-	width: 50px;
-	height: auto;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-}
+
 /* start commented backslash hack \*/
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
@@ -142,21 +130,49 @@ header p {
 	padding: 10px;
 }
 
+ul.dropdown-menu {
+	padding: 20px;
+	font-size: 20px;
+	margin-right: 20px;
+	position: absolute;;
+}
+header .username {
+	color: white;
+	background-color: rgba(185, 68, 89, .85);
+	padding: 10px;
+	font-size: 20px;
+	position: relative;
+	border-radius: 10px;
+	font-family: helvetica;
+}
+
 /*----SPLASH PAGE STYLES----*/
 /*#splashPage {
 	background-color: black;
 }*/
 body {
 	background-image: url("../photos/awkward.jpg");
-	background-size: cover;
+	background-size:cover;
+	background-position: center;
 }
-h1 {
+
+#splashPage {
+	width: 80%;
+	margin: 0 auto;
+}
+
+img#h1 {
+	display: block;
+	margin: 0 auto;
+}
+
+/*h1 {
   font-family: 'Mogra', cursive;
   font-size: 100px;
   text-transform: uppercase;
   text-align: center;
   padding: 100px 30px;
-}
+}*/
 
 form {
   text-align: center;
@@ -168,20 +184,21 @@ input#dateMaker {
 }
 
 /*----RESULTS PAGE STYLES----*/
-.container {
+#resultsPage.container {
   width: 80%;
-	min-height: 500px;
+	height:70vh;
   margin: 0 auto;
 	color:white;
+	background-color: rgba(0,0,0,0.8);
+	border-radius: 10px;
 }
 
-div.column {
-  display: inline-block;
-	height: 500px;
+#resultsPage .column {
+	height: 65vh;
   width: 47%;
   text-align: center;
-  padding: 30px;
-  background-color: black;
+	padding: 50px 40px 10px 40px;
+	position: relative;
 }
 
 div#movieResults {
@@ -192,9 +209,40 @@ div#recipeResults {
 	float: right;
 }
 
+#resultsPage .columnHeader {
+	height: 6vh;
+}
+
+#resultsPage .columnMain {
+	height: 50vh;
+	overflow: scroll;
+	margin-bottom: 10px;
+	padding-bottom: 7vh;
+}
+
+#resultsPage .columnFooter {
+	height: 10vh;
+	/*position: absolute;*/
+	/*bottom: 20px;*/
+}
+
+#resultsPage .pageFooter {
+		height: 10vh;
+}
+
 h2 {
   font-size: 30px;
 	margin-bottom: 20px;
+	font-family: sans-serif;
+}
+
+#recipeResults h2 {
+	font-size: 20px;
+}
+
+#resultsPage p {
+	font-size: 20px;
+	font-family: sans-serif;
 }
 
 /*div.columnContainer {
@@ -213,6 +261,8 @@ div.columnFooter {
 #resultsPage img {
 	width: 40%;
 	height: auto;
+	margin: 20px;
+	padding: 10px;
 }
 
 button#saveResults {
@@ -222,125 +272,144 @@ button#saveResults {
 }
 
 #getMovie {
+	background-color: white;
 	color: black;
+	font-family: sans-serif;
 }
 
 #getRecipe {
+	background-color: white;
 	color: black;
+	font-family: sans-serif;
 }
+
 
 /*----PROFILE PAGE STYLES----*/
 main {
-	width: 100%;
+  width: 100%;
 }
 
 #dateLog.row {
-	background: rgb(0,0,0);
-	opacity: 0.85;
-	/*margin: 10px 0;*/
-	padding: 40px;
-	width: 100%;
+  background: rgb(0,0,0);
+  opacity: 0.95;
+  /*margin: 10px 0;*/
+  padding: 40px;
+  width: 80%;
+  overflow: scroll;
+  height: 800px;
+  border-radius: 0 0 10px 10px;
+	margin: 0 auto;
 }
 
 #dateNav {
-	text-align: center;
-	background-color: rgba(185, 68, 89, .85);
-	padding: 15px;
-	width: 100%;
+  text-align: center;
+  background-color: rgba(185, 68, 89, .9);
+  padding: 15px;
+  width: 80%;
+  border-radius: 10px 10px 0 0;
+	margin: 0 auto;
 }
 
 #dateNav a {
-	display: inline-block;
-	font-size: 25px;
-	font-family: "Apple Chancery", serif;
-	color: white;
-	margin: 0 20px;
-	text-decoration: none;
-}
-
-ul#dateLog {
-	background-color: rgb (0,0,0);
-	opacity: 0.85;
+  display: inline-block;
+  font-size: 25px;
+  font-family: "Apple Chancery", serif;
+  color: white;
+  margin: 0 20px;
+  text-decoration: none;
 }
 
 .active {
-	background-color: rgb(0, 0, 0);
-	padding: 10px;
-	border-radius: 5px;
+  background-color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 #dates li {
-	background-color: white;
-	color: black;
-	margin-bottom: 20px;
+  color: black;
+  margin-bottom: 20px;
 }
 
-#dates .column {
-	background-color: white;
-}
 
 #column1 {
-	float: left;
-	width: 15%;
+  float: left;
+  width: 15%;
+  background-color: rgba(185, 68, 89, .9);
+  border-radius: 15px 0px 0px 15px;
+  height: 400px;
 }
 
 #column2 {
-	float: left;
-	width: 60%;
+  float: left;
+  width: 60%;
+  background-color: rgba(185, 68, 89, .9);
+  height: 400px;
+	position: relative;
+}
+
+#column2 a{
+	float: right;
+	margin-right: 17%;
 }
 
 #column3 {
-	float: left;
-	width: 25%;
-	padding-top: 30px;
+  float: left;
+  width: 25%;
+  padding-top: 30px;
+  background-color: rgba(185, 68, 89, .9);
+  border-radius: 0px 15px 15px 0px;
+  height: 400px;
+  overflow: scroll;
+  /*text-align: left;*/
 }
 
 #dates .moviePicture, #dates .recipePicture {
-	display: inline-block;
-	width: 44%;
-	height: 100%;
+  display: inline-block;
+  width: 44%;
+  height: 90%;
 }
 
 #dates .moviePicture {
-	margin-right: 5px;
+  margin: 0 20px;
+  /*height: 400px;*/
 }
 
 #dates .recipePicture {
-	margin-left: 5px;
+  margin-left: 10px;
+  /*height: 400px;*/
 }
 
 #dates .profilePicture {
-	margin: 0 auto 20px auto;
-	width: 123px;
-	height: 123px;
+  margin: 0 auto 20px auto;
+  width: 123px;
+  height: 123px;
 }
 
 .userBox .username {
-	font-size: 22px;
-	margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
 .crud {
-	/*position: fixed;*/
-	/*bottom: 20px;*/
+  /*position: fixed;*/
+  /*bottom: 20px;*/
 }
 
 .crud a {
-	text-decoration: none;
-	display: inline-block;
-	margin: 0 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 20px;
 }
 
 #column3 h3 {
-	font-size: 36px;
-	font-weight: bold;
-	margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 #column3 p {
-	font-size: 24px;
+  font-size: 24px;
 }
-
 
 /*-----MODAL STYLES-----*/
 
@@ -383,18 +452,67 @@ ul#dateLog {
     cursor: pointer;
 }
 
-ul.dropdown-menu {
-	padding: 20px;
-	font-size: 20px;
-	margin-right: 20px;
-	position: absolute;;
+/* footer styles */
+
+footer {
+	 position: relative;
+	 padding-top: 60px;
 }
-.username {
-	color: white;
-	background-color: rgba(185, 68, 89, .85);
-	padding: 10px;
-	font-size: 20px;
-	position: relative;
-	border-radius: 10px;
-	font-family: helvetica;
+footer p {
+	display: block;
+	text-align: right;
+	margin-right: 55px;
+}
+footer img {
+	width: 50px;
+	height: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 60px;
+}
+	@media (max-width: 1000px) {
+body {
+      color: white;
+  }
+  #splashPage img {
+      display: block;
+      margin: 0 auto;
+  }
+}
+@media (max-width: 800px) {
+body {
+      color: yellow;
+  }
+  #splashPage img {
+      display: block;
+      margin: 0 auto;
+      max-width: 70%;
+  }
+}
+@media (max-width: 500px) {
+  body {
+    color: red;
+		background-repeat: no-repeat;
+		background-position: right top;
+		background-attachment: absolute;
+	}
+
+  #h1 {
+    display: block;
+    margin: 0 auto;
+  }
+  p.username {
+    display: none;
+  }
+  .username {
+    font-size: 10px;
+  }
+  .dropdown-menu {
+    min-width: 40px;
+  }
+  .dropdown-menu a {
+    font-size: 14px;
+    padding: 0;
+  }
 }
